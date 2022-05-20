@@ -12,6 +12,10 @@ spring:
         uri: lb://ms-business-partner
         predicates:
           - Path=/BusinessPartnerService/**
+      - id: ms-items
+        uri: lb://ms-fund-transact
+        predicates:
+          - Path=//MsFundTransact/**
 #server config  
 server:
   port: 8080
