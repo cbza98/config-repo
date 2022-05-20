@@ -1,0 +1,29 @@
+#spring config
+spring:
+  application:
+    name: api-getaway
+  cloud:
+    gateway:
+     discovery:
+       locator:
+         enabled: true
+     routes:
+      - id: ms-business-partner
+        uri: lb://ms-business-partner
+        predicates:
+          - Path=/BusinessPartnerService/**
+#server config  
+server:
+  port: 8080
+#eureka config
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8082/eureka/
+    enabled: true
+  instance:
+    hostname: localhost
+
+  

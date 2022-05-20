@@ -1,0 +1,21 @@
+#spring config
+spring:
+  data:
+      mongodb:
+        uri: mongodb+srv://trainingdbnttdata:zMaT0bwJ86xps4wN@proyectobootcamp.jyiov.mongodb.net/accounts
+  application:
+    name: ms-fund-transact
+#server spring
+server:
+  port: 9091
+
+#eureka spring
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8082/eureka/
+    enabled: true
+  instance:
+    hostname: localhost

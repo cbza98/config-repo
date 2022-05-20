@@ -1,0 +1,20 @@
+#spring config
+spring:
+  data:
+      mongodb:
+        uri: mongodb+srv://trainingdbnttdata:zMaT0bwJ86xps4wN@proyectobootcamp.jyiov.mongodb.net/bspartners
+  application:
+    name: ms-business-partner
+#server config
+server:
+  port: 9090
+#eureka config
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8082/eureka/
+    enabled: true
+  instance:
+    hostname: localhost
