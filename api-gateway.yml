@@ -15,7 +15,7 @@ spring:
       - id: ms-items
         uri: lb://ms-fund-transact
         predicates:
-          - Path=//MsFundTransact/**
+          - Path=/MsFundTransact/**
 #server config  
 server:
   port: 8080
