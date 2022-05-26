@@ -1,0 +1,27 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://trainingdbnttdata:zMaT0bwJ86xps4wN@proyectobootcamp.jyiov.mongodb.net/accounts
+  application:
+    name: ms-account-service
+server:
+  port: 9091
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: https://registry-service-ws.azurewebsites.net/eureka/
+    enabled: true
+  instance:
+    hostname: localhost
+
+bp:
+  service:
+    url: 'https://customer-service-ws.azurewebsites.net/BusinessPartnerService'
+cc:
+  service:
+    url: 'http://localhost:9092/Credits'
+
+
