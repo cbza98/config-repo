@@ -12,14 +12,14 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: https://registry-service-ws.azurewebsites.net/eureka/
+      defaultZone: http://localhost:8082/eureka/
     enabled: true
   instance:
     hostname: localhost
 
 bp:
   service:
-    url: 'https://customer-service-ws.azurewebsites.net/BusinessPartnerService'
+    url: 'http://localhost:9090/BusinessPartnerService'
 cc:
   service:
     url: 'http://localhost:9092/Credits'

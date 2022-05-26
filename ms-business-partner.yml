@@ -7,14 +7,14 @@ spring:
     name: ms-business-partner
 #server config
 server:
-  port: 8080
+  port: 9090
 #eureka config
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: https://registry-service-ws.azurewebsites.net/eureka/
+      defaultZone: http://localhost:8082/eureka/
     enabled: true
   instance:
     hostname: localhost
