@@ -6,7 +6,22 @@ spring:
     name: ms-account-service
 server:
   port: 9091
-
+cloud:
+  stream:
+      bindings:
+        input-debitcard-0:
+          destination: 8gy1nxob-debicard
+#kafka config
+kafka:
+    bootstrap-servers: moped-01.srvs.cloudkafka.com:9094,moped-02.srvs.cloudkafka.com:9094,moped-03.srvs.cloudkafka.com:9094
+    properties:
+      security:
+        protocol: SASL_SSL
+      sasl:
+        mechanism: SCRAM-SHA-256
+        jaas:
+          config: org.apache.kafka.common.security.scram.ScramLoginModule required username="8gy1nxob" password="I5IdnrhY8C8yxRzjy5kaTt2khcFYS8xE";
+#eureka config
 eureka:
   client:
     register-with-eureka: true
@@ -16,7 +31,7 @@ eureka:
     enabled: true
   instance:
     hostname: localhost
-
+#feign config
 bp:
   service:
     url: 'http://localhost:9090/BusinessPartnerService'
