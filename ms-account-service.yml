@@ -18,7 +18,7 @@ spring:
       definition: input
     stream:
       bindings:
-        debitcard-in-0:
+        input-in-0:
           destination: 8gy1nxob-debicard
 server:
   port: 9091
