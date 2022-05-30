@@ -4,15 +4,7 @@ spring:
       uri: mongodb+srv://trainingdbnttdata:zMaT0bwJ86xps4wN@proyectobootcamp.jyiov.mongodb.net/accounts
   application:
     name: ms-account-service
-server:
-  port: 9091
-cloud:
-  stream:
-      bindings:
-        input-debitcard-0:
-          destination: 8gy1nxob-debicard
-#kafka config
-kafka:
+  kafka:
     bootstrap-servers: moped-01.srvs.cloudkafka.com:9094,moped-02.srvs.cloudkafka.com:9094,moped-03.srvs.cloudkafka.com:9094
     properties:
       security:
@@ -21,6 +13,15 @@ kafka:
         mechanism: SCRAM-SHA-256
         jaas:
           config: org.apache.kafka.common.security.scram.ScramLoginModule required username="8gy1nxob" password="I5IdnrhY8C8yxRzjy5kaTt2khcFYS8xE";
+  cloud:
+    function:
+      definition: input
+    stream:
+      bindings:
+        input-debitcard-0:
+          destination: 8gy1nxob-debicard
+server:
+  port: 9091
 #eureka config
 eureka:
   client:
