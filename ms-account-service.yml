@@ -15,10 +15,12 @@ spring:
           config: org.apache.kafka.common.security.scram.ScramLoginModule required username="8gy1nxob" password="I5IdnrhY8C8yxRzjy5kaTt2khcFYS8xE";
   cloud:
     function:
-      definition: input
+      definition: input,exist
     stream:
       bindings:
         input-in-0:
+          destination: 8gy1nxob-debicard
+        exist-in-0:
           destination: 8gy1nxob-debicard
 server:
   port: 9091
