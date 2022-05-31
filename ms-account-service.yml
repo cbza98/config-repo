@@ -20,6 +20,8 @@ spring:
       bindings:
         input-in-0:
           destination: 8gy1nxob-debicard
+        exist-in-0:
+          destination: 8gy1nxob-exist
 server:
   port: 9091
 #eureka config
